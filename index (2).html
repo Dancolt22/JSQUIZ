@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JS Fundamentals Quiz | DFI</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<!-- ===================== WELCOME SCREEN ===================== -->
+<section id="welcome-screen" class="screen active">
+  <div class="card welcome-card">
+    <div class="badge">Digital Fortress Institute</div>
+    <h1 class="title">JavaScript Fundamentals Quiz</h1>
+    <p class="subtitle">Conditionals &middot; Loops &middot; Functions</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <span class="info-number">40</span>
+        <span class="info-label">Questions</span>
+      </div>
+      <div class="info-item">
+        <span class="info-number">3</span>
+        <span class="info-label">Topics</span>
+      </div>
+      <div class="info-item">
+        <span class="info-number">&infin;</span>
+        <span class="info-label">Review Time</span>
+      </div>
+    </div>
+
+    <div class="rules">
+      <h3>Before you start</h3>
+      <ul>
+        <li>Every question is based only on <strong>if/else</strong>, <strong>loops</strong>, and <strong>functions</strong>.</li>
+        <li>You can move freely between questions and change any answer before submitting.</li>
+        <li>Unanswered questions are flagged so you don't miss them.</li>
+        <li>At the end, you'll see your score and a full answer review.</li>
+      </ul>
+    </div>
+
+    <button id="start-btn" class="btn btn-primary btn-large">Start Quiz</button>
+  </div>
+</section>
+
+<!-- ===================== QUIZ SCREEN ===================== -->
+<section id="quiz-screen" class="screen">
+  <div class="quiz-layout">
+
+    <!-- Sidebar: question navigator -->
+    <aside class="sidebar">
+      <h4 class="sidebar-title">Questions</h4>
+      <div id="question-nav" class="question-nav"></div>
+      <div class="legend">
+        <div class="legend-item"><span class="dot dot-answered"></span> Answered</div>
+        <div class="legend-item"><span class="dot dot-current"></span> Current</div>
+        <div class="legend-item"><span class="dot dot-unanswered"></span> Unanswered</div>
+      </div>
+    </aside>
+
+    <!-- Main quiz panel -->
+    <main class="quiz-main">
+      <div class="quiz-header">
+        <span id="progress-text" class="progress-text">Question 1 of 40</span>
+        <div class="progress-bar-track">
+          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="card question-card">
+        <p id="question-text" class="question-text"></p>
+        <pre id="question-code" class="question-code" style="display:none;"><code id="question-code-content"></code></pre>
+
+        <div id="options-container" class="options-container"></div>
+      </div>
+
+      <div class="quiz-nav-buttons">
+        <button id="prev-btn" class="btn btn-secondary">&larr; Previous</button>
+        <button id="next-btn" class="btn btn-primary">Next &rarr;</button>
+        <button id="submit-btn" class="btn btn-submit" style="display:none;">Submit Quiz</button>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- ===================== RESULTS SCREEN ===================== -->
+<section id="results-screen" class="screen">
+  <div class="results-wrap">
+    <div class="card results-summary">
+      <div class="badge">Quiz Complete</div>
+      <h1 class="title">Your Results</h1>
+
+      <div class="score-circle-wrap">
+        <div id="score-circle" class="score-circle">
+          <span id="score-percent">0%</span>
+        </div>
+      </div>
+
+      <p id="score-text" class="score-text"></p>
+      <p id="score-message" class="score-message"></p>
+
+      <div class="stats-row">
+        <div class="stat-box stat-correct">
+          <span id="stat-correct-num" class="stat-num">0</span>
+          <span class="stat-label">Correct</span>
+        </div>
+        <div class="stat-box stat-wrong">
+          <span id="stat-wrong-num" class="stat-num">0</span>
+          <span class="stat-label">Incorrect</span>
+        </div>
+        <div class="stat-box stat-skipped">
+          <span id="stat-skipped-num" class="stat-num">0</span>
+          <span class="stat-label">Skipped</span>
+        </div>
+      </div>
+
+      <div class="results-actions">
+        <button id="review-btn" class="btn btn-primary">Review Answers &darr;</button>
+        <button id="retake-btn" class="btn btn-secondary">Retake Quiz</button>
+      </div>
+    </div>
+
+    <div id="review-section" class="review-section">
+      <h2 class="review-heading">Answer Review</h2>
+      <p class="review-subheading">Go through each question below to see what you picked versus the correct answer.</p>
+      <div id="review-list" class="review-list"></div>
+    </div>
+  </div>
+</section>
+
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
